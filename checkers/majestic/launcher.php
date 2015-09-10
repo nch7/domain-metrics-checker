@@ -4,7 +4,7 @@ include __DIR__.'/../../start.php';
 
 use Illuminate\Database\Capsule\Manager as DB;
 
-$domains = Domain::whereRaw('`tf` is null AND `status` = "active"')->limit(1500)->get(['id', 'name'])->toArray();
+$domains = Domain::whereRaw('`tf` is null AND `status` = "active"')->limit(getenv('DOMAINS_PER_MINUTE'))->get(['id', 'name'])->toArray();
 
 if(($domains) == 0) {
 	die('No domains!');
