@@ -4,7 +4,7 @@ include __DIR__.'/../../start.php';
 
 use Illuminate\Database\Capsule\Manager as DB;
 
-$domains = Domain::whereRaw('`tf` is null AND `status` = "active"')->limit(200)->get(['id', 'name'])->toArray();
+$domains = Domain::whereRaw('`tf` is null AND `status` = "active"')->limit(1500)->get(['id', 'name'])->toArray();
 
 if(($domains) == 0) {
 	die('No domains!');
@@ -12,7 +12,7 @@ if(($domains) == 0) {
 
 $domainIds = array_pluck($domains, 'id');
 
-$chunks = array_chunk($domains, 50);
+$chunks = array_chunk($domains, 100);
 $sleepingTime = 55 / count($chunks);
 $chunksAmount = count($chunks);
 $domainsAmount = count($domains);
