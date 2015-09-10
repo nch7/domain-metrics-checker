@@ -4,6 +4,8 @@
 	use Illuminate\Database\Capsule\Manager as DB;
 
 	$total 	= Domain::count();
+	$totalCompleted = Domain::where('status', 'finished')->count();
+
 	$page = isset($_GET['page']) == true ? $_GET['page'] : 1;
 	$perPage = 100;
 	$totalPages = floor($total / $perPage);
@@ -26,7 +28,7 @@
 	<body>
 		<?php include __DIR__.'/menu.php' ?>
 		<div class='container'>
-			<h2>Total <?=_e($total)?> domains found. Sorting by <?=_e($sortBy)?>, <?=_e($sortType)?> </h2>
+			<h2>Total <?=_e($total)?> domains found. Completed: <?=$totalCompleted?> . Sorting by <?=_e($sortBy)?>, <?=_e($sortType)?> </h2>
 			<table class='table table-stripped'>
 				<thead>
 					<th class='col-xs-5'><a href='<?="index.php?sortBy=name&sortType={$newSortType}"?>'>Domain</a></th>

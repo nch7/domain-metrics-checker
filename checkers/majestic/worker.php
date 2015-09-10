@@ -33,7 +33,7 @@ foreach ($results as $name => $metrics) {
 			'rd' 		=> $metrics['rd'],
 			'tf' 		=> $metrics['tf'],
 			'topical'	=> $metrics['niche'],
-			'status'	=> 'completed'	
+			'status'	=> 'finished'	
 		]);
 	}
 }
