@@ -1,0 +1,11 @@
+{
+    "require": {
+        "illuminate/database": "4.1.*",
+        "php-curl-class/php-curl-class": "4.6.9"
+    },
+    "autoload": {
+        "classmap": [
+            "models", "checkers/majestic"
+        ]
+    }
+}
