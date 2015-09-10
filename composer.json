@@ -1,7 +1,8 @@
 {
     "require": {
         "illuminate/database": "4.1.*",
-        "php-curl-class/php-curl-class": "4.6.9"
+        "php-curl-class/php-curl-class": "4.6.9",
+        "vlucas/phpdotenv": "2.0.*"
     },
     "autoload": {
         "classmap": [
