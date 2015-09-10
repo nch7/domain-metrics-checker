@@ -28,7 +28,10 @@
 	<body>
 		<?php include __DIR__.'/menu.php' ?>
 		<div class='container'>
-			<h2>Total <?=_e($total)?> domains found. Completed: <?=$totalCompleted?> . Sorting by <?=_e($sortBy)?>, <?=_e($sortType)?> </h2>
+			<div class='clearfix'>
+				<h2 class='pull-left'>Total <?=_e($total)?> domains found. Completed: <?=$totalCompleted?> . Sorting by <?=_e($sortBy)?>, <?=_e($sortType)?> </h2>
+				<a id="delete" href='delete.php' class='btn btn-danger pull-right'>Delete All</a>
+			</div>
 			<table class='table table-stripped'>
 				<thead>
 					<th class='col-xs-5'><a href='<?="index.php?sortBy=name&sortType={$newSortType}"?>'>Domain</a></th>
