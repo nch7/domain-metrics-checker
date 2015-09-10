@@ -14,10 +14,14 @@
 		<?php include __DIR__.'/menu.php' ?>
 		<div class='container'>
 			<h2>Use this form to import domains</h2>
-			<form method="post" action="save.php">
+			<form method="post" action="save.php" enctype="multipart/form-data">
 				<div class='form-group'>
 					<label for="domains">Domains list</label>
 					<textarea id="domains" rows="20" name='domains' placeholder='Enter 1 domain per line' class='form-control'></textarea>
+				</div>
+				<div class='form-group'>
+					<label for="domainsFile"></label>
+					<input type="file" name="domainsFile" id="domainsFile" class='form-control'>
 				</div>
 				<div class='form-group'>
 					<input type="submit" class='btn btn-lg btn-primary pull-right' value="Import">
